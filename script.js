@@ -1,19 +1,12 @@
-function explore() {
-    window.scrollTo({
-        top: window.innerHeight,
-        behavior: 'smooth'
+// Interactive hover effect for stat cards
+document.querySelectorAll('.stat-card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-10px)';
+        card.style.transition = '0.3s ease';
     });
-}
-
-// Fade-in animation on load
-document.addEventListener('DOMContentLoaded', () => {
-    const heroContent = document.querySelector('.content');
-    heroContent.style.opacity = '0';
-    heroContent.style.transform = 'translateY(20px)';
-    
-    setTimeout(() => {
-        heroContent.style.transition = 'all 1s ease-out';
-        heroContent.style.opacity = '1';
-        heroContent.style.transform = 'translateY(0)';
-    }, 100);
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0)';
+    });
 });
+
+console.log("AITS Platinum Portal v3.0 - Deployment Ready");
